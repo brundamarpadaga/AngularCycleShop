@@ -1,0 +1,64 @@
+/* cart.component.css */
+.container {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  /* Add this CSS to your component's CSS file or in a global styles file */
+
+/* Style for the total cost */
+span.total-cost {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Text color */
+  }
+  
+  /* Style for the Checkout button */
+  button.checkout-button {
+    margin-top: 10px; /* Add spacing between the total cost and button */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove button border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Add cursor pointer on hover */
+    transition: background-color 0.3s ease; /* Add a smooth background color transition on hover */
+  
+    /* Style for button on hover */
+    &:hover {
+      background-color: #0056b3; /* Change button background color on hover */
+    }
+  }
+  
+  

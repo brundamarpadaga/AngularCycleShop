@@ -1,0 +1,69 @@
+/* Add this CSS to your component's CSS file or global styles */
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .center-table {
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 5px 15px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #545b62;
+  }
+
+.alert.alert-success {
+    background-color: #d4edda; /* Background color for success message */
+    border-color: #c3e6cb; /* Border color */
+    color: #155724; /* Text color for success message */
+    padding: 10px 15px; /* Padding for the success message */
+    border-radius: 4px; /* Rounded corners */
+    margin-top: 10px; /* Add spacing at the top of the message */
+    display: inline-block; /* Make the message inline with other content */
+  }
+  
+  

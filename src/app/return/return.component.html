@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>Return Cycles</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Cycle ID</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Days Rented</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cartItem of cartItems">
+                <td>{{ cartItem.cycle.id }}</td>
+                <td>{{ cartItem.cycle.brand }}</td>
+                <td>{{ cartItem.quantity }}</td>
+                <td>
+                    <input type="number" [(ngModel)]="cartItem.days" min="1" placeholder="Days Rented" />
+                </td>
+                <td>
+                    <button (click)="returnCycle(cartItem.cycle.id)" class="btn btn-success">
+                        Return
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
