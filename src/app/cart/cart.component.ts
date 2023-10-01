@@ -12,11 +12,16 @@ import { Router } from '@angular/router';
 export class CartComponent {
   cartItems: any[] = [];
   totalCost : number;
+  borrowedDays: { [key: string]: number } = {};
 
   constructor(private cartService: CartService,private router:Router) { }
 
   ngOnInit() {
     this.getCartItems();
+  }
+
+  mapData(){
+    this.cartItems.forEach(item => this.borrowedDays[item.id] = item.days);
   }
 
   getCartItems() {
@@ -41,7 +46,9 @@ export class CartComponent {
   }
 
   checkout(){
-    this.cartService.checkout().subscribe();
+    this.mapData();
+    console.log(this.borrowedDays);
+    this.cartService.checkout(this.borrowedDays).subscribe();
     this.router.navigate(['/return']);
    }
 

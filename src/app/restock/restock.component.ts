@@ -12,7 +12,7 @@ export class RestockComponent {
   cyclecount: string = '';
   cyclestock: number = 0;
   cyclebrand: string = '';
-  newdata: any;
+  newCycle: any;
 
   successMessage: string | null = null;
 
@@ -45,5 +45,48 @@ export class RestockComponent {
       }
     });
   }
+
+
+  addCycle(newCycle: any) {
+
+    const apiUrl = `http://localhost:8080/api/cycles/add`;
+
+   
+
+    const authToken = localStorage.getItem('token');
+
+ 
+
+    const headers = new HttpHeaders({
+
+      'Authorization': 'Bearer ' + authToken,
+
+    });
+
+ 
+
+    this._http.put(apiUrl, newCycle, { headers: headers }).subscribe({
+
+      next: (response) => {
+
+        console.log('Cycle added successfully:', response);
+
+        // Clear the form fields after successful submission
+
+        newCycle.brand = '';
+
+        newCycle.stock = 0;
+
+      },
+
+      error: (error) => {
+
+        console.error('An error occurred while adding a cycle:', error);
+
+      }
+
+    });
+
+}
 
 }

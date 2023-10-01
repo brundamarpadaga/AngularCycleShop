@@ -3,28 +3,27 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Cycle ID</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Days Rented</th>
-                <th scope="col">Actions</th>
+                <th>Name</th>
+                <th>Cycle ID</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Days Rented</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let cartItem of cartItems">
-                <td>{{ cartItem.cycle.id }}</td>
-                <td>{{ cartItem.cycle.brand }}</td>
-                <td>{{ cartItem.quantity }}</td>
-                <td>
-                    <input type="number" [(ngModel)]="cartItem.days" min="1" placeholder="Days Rented" />
-                </td>
-                <td>
-                    <button (click)="returnCycle(cartItem.cycle.id)" class="btn btn-success">
-                        Return
-                    </button>
-                </td>
-            </tr>
+            <ng-container *ngFor="let cart of carts">
+                <tr *ngFor="let cartItem of cart.cartItems">
+                    <td>{{ cart.user.name }}</td>
+                    <td>{{ cartItem.cycle.id }}</td>
+                    <td>{{ cartItem.cycle.brand }}</td>
+                    <td>{{ cartItem.quantity }}</td>
+                    <td>{{ cartItem.days }}</td>
+                    <td>
+                        <button (click)="returnCycle(cart.id,cartItem.cycle.id)">Return</button>
+                    </td>
+                </tr>
+            </ng-container>
         </tbody>
     </table>
 </div>
-

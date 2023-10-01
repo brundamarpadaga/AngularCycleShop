@@ -26,7 +26,7 @@ export class CartService {
     return this.http.get<any[]>(`${this.apiUrl}/api/cycle/displaycart`);
   }
 
-  checkout(){
-    return this.http.get(`${this.apiUrl}/api/cycle/checkout`, {});
+  checkout(borrowedDays: { [key: string]: number }){
+    return this.http.post(`${this.apiUrl}/api/cycle/checkout`, borrowedDays);
   }
 }
