@@ -19,8 +19,16 @@
           <td>{{ cartItem.quantity }}</td>
           <td>{{ cartItem.cycle.price }}</td>
           <td>
-            <input type="number" [(ngModel)]="cartItem.days" (click)="calculateTotal()" min="1" placeholder="Days" />
+            <input
+              type="number"
+              [(ngModel)]="cartItem.days"
+              (click)="calculateTotal()"
+              [ngModel]="1"
+              min="1"
+              placeholder="Days"
+            />
           </td>
+          
           <td>{{ cartItem.quantity * cartItem.cycle.price * cartItem.days }}</td>
           <td>
             <button

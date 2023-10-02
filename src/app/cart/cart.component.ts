@@ -10,11 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+  
   cartItems: any[] = [];
   totalCost : number;
   borrowedDays: { [key: string]: number } = {};
 
   constructor(private cartService: CartService,private router:Router) { }
+
+  
 
   ngOnInit() {
     this.getCartItems();
